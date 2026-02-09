@@ -113,9 +113,10 @@ body {
   background:#23334a;
 }
 
-.menu-mobile.ativo span{
+.menu.ativo .botao-mobile span {
   background: white;
 }
+
 
 .menu-mobile {
   position: fixed;
@@ -500,7 +501,7 @@ SESSÃO SOBRE
 .forma-bloco {
   width: 480px;
   height: 480px;
-  background: rgba(12, 9, 1, 0.041);
+  background: rgba(12, 9, 1, 0.212);
   border-radius: 80px;
   top: 20%;
   left: -160px;
