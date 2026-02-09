@@ -1,0 +1,114 @@
+/* TELAS CELULARES */
+@media(max-width:600px){
+
+  .grade-hero{
+    padding-top: 80px;
+  }
+
+  .grade-hero h1{
+font-size: 1.8em;
+  }
+.grade-diferenciais h2{
+    font-size: 1.8em;
+
+}
+ .painel {
+
+    position: relative;     
+    min-height: 100vh;     
+    height: auto;           
+    align-items: flex-start;
+ }
+
+ .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contato-texto {
+    order: 1;
+  }
+
+  .formulario {
+    order: 2;
+  }
+
+ .rodape-conteudo {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .rodape {
+    text-align: left;
+  }
+
+  .redes-sociais {
+    align-items: start;
+  }
+
+
+}
+
+/* TABLETS */
+@media (min-width:601px) and (max-width: 768px) {
+.grade-diferenciais h2{
+    font-size: 1.5em;
+
+}
+
+.painel {
+
+    position: relative;     
+    min-height: 100vh;     
+    height: auto;           
+    align-items: flex-start;
+ }
+
+
+.contato-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contato-texto {
+    order: 1;
+  }
+
+  .formulario {
+    order: 2;
+  }
+
+ .rodape-conteudo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* DESKTOP */
+@media (min-width:769px) and  (max-width: 1024px) {
+.grade-diferenciais h2{
+    font-size: 1.5em;
+
+}
+
+.painel {
+
+    position: relative;     
+    min-height: 100vh;     
+    height: auto;           
+    align-items: flex-start;
+ }
+
+
+ .rodape-conteudo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* TELAS GRANDES */
+@media (min-width:1025px){
+    .grade-diferenciais h2{
+    font-size: 1.7em;
+}
+
+
+}
