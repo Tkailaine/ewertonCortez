@@ -110,7 +110,11 @@ body {
 .botao-mobile span {
   width: 24px;
   height: 2px;
-  background: #b8924a;
+  background:#23334a;
+}
+
+.menu-mobile.ativo span{
+  background: white;
 }
 
 .menu-mobile {
@@ -496,7 +500,7 @@ SESSÃO SOBRE
 .forma-bloco {
   width: 480px;
   height: 480px;
-  background: rgba(12, 9, 1, 0.219);
+  background: rgba(12, 9, 1, 0.041);
   border-radius: 80px;
   top: 20%;
   left: -160px;
