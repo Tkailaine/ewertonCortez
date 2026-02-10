@@ -181,91 +181,350 @@ h2 { font-size: 1.4rem; margin-bottom: 10px; }
 p { font-size: 1.05rem; opacity: 0.9;
 line-height: 2em; text-align: justify; }
 
-.grade-hero {
+.hero-signature {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 7vw;
+  background: linear-gradient(135deg, #f2f4f8, #e6ebf3);
+  overflow: hidden;
+}
+
+/* CAMADAS DE FUNDO */
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.layer-1 {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(15,23,42,0.18), transparent 55%);
+}
+
+.layer-2 {
+  background:
+    radial-gradient(circle at 85% 75%, rgba(71,85,105,0.22), transparent 60%);
+}
+
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+/* HERO COM FUNDO AZULADO */
+.hero {
+  padding: 200px 24px;
+  background:
+    radial-gradient(
+      1200px circle at top left,
+      #e8eff7,
+      #f5f7fb 55%
+    );
+}
+
+/* CONTAINER */
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* BLOCO SUPERIOR */
+.hero-top {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 100px;
+  align-items: start;
 }
 
-.apoio{
-    margin-top: 20px;
+/* TÍTULO */
+.hero-title h1 {
+  font-size: clamp(1.2em, 2.2em, 4em);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.035em;
 }
 
-.caixa-destaque {
-  padding: 30px;
-  border-left: 3px solid var(--azul-escuro);
-  background: rgba(0, 0, 0, 0.048);
+.subtitulo {
+  margin-top: 36px;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  max-width: 520px;
+  color: #334155;
 }
 
-/*=====================
- SESSÃO DE ATUAÇÃO 
- ======================*/
-.lista-atuacao {
+/* LATERAL */
+.hero-side {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 48px;
+  align-items: flex-start;
 }
 
-/* BLOCO */
-.area {
-  border-bottom: 1px solid rgba(255,255,255,0.25);
+/* CARD LATERAL */
+.side-card {
+  position: relative;
+  padding-left: 48px;
+  max-width: 360px;
+}
+
+/* LINHA VISUAL */
+.side-line {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #0f172a,
+    rgba(15,23,42,0.2)
+  );
+  border-radius: 2px;
+}
+
+/* TEXTO APOIO */
+.apoio {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #475569;
+}
+
+/* BLOCO ESCURO DE AUTORIDADE */
+.hero-highlight {
+  margin-top: 90px;
+  padding: 56px 64px;
+  background: linear-gradient(160deg, #0f172a, #1e293b);
+  border-radius: 22px;
+  box-shadow: 0 40px 90px rgba(15,23,42,0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+/* TEXTURA PREMIUM */
+.hero-highlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      1200px circle at top left,
+      rgba(255,255,255,0.18),
+      transparent 60%
+    );
+  opacity: 0.6;
+}
+
+.hero-highlight p {
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  max-width: 620px;
+  color: #ffffff;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .hero-top {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .side-card {
+    padding-left: 28px;
+  }
+
+  .hero-highlight {
+    padding: 40px;
+  }
+}
+
+
+/* =====================
+   ATUAÇÃO — PREMIUM
+===================== */
+
+.atuacao-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
 }
 
 /* CABEÇALHO */
-.area-cabecalho {
-  width: 100%;
-  background: transparent;
-  border: none;
-  color: inherit;
-  padding: 20px 0;
-  font-size: 1.2rem;
+.atuacao-header {
+  max-width: 520px;
+}
+
+.atuacao-header h2 {
+font-size: clamp(1.2em, 2.2em, 4em);
   font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.atuacao-sub {
+  margin-top: 24px;
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* GRID DOS CARDS */
+.atuacao-cards {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+}
+
+/* CARD */
+.atuacao-card {
+  position: relative;
+  padding: 56px 48px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.45);
+  backdrop-filter: blur(2px);
 
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 24px;
 
-  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* ÍCONE */
-.area-cabecalho .icone {
-  font-size: 1.5rem;
-  transition: transform 0.3s ease;
-}
-
-/* CONTEÚDO */
-.area-conteudo {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+/* EFEITO HOVER PREMIUM */
+.atuacao-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    140deg,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.02)
+  );
   opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.area-conteudo p {
-  padding-bottom: 20px;
-  max-width: 90%;
-  opacity: 0.9;
+.atuacao-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.35);
 }
 
-/* ATIVO */
-.area.ativa .area-conteudo {
-  max-height: 300px;
+.atuacao-card:hover::before {
   opacity: 1;
 }
 
-.area.ativa .icone {
-  transform: rotate(45deg);
+/* TÍTULO DO CARD */
+.atuacao-card h2 {
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* TEXTO */
+.atuacao-card p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  opacity: 0.9;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .atuacao-cards {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .atuacao-card {
+    padding: 44px 36px;
+  }
 }
 
 
 
-.grade-diferenciais {
+/* =====================
+   DIFERENCIAIS — NOVO
+===================== */
+
+.diferenciais {
+  position: relative;
+}
+
+/* FUNDO */
+.diferenciais .forma-bloco {
+  background-color: #23334a17;
+}
+
+/* CONTAINER */
+.diferenciais-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* HEADER */
+.diferenciais-header h2 {
+  font-size: clamp(1.2em, 2.2em, 4em);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+/* GRID */
+.diferenciais-grid {
+  margin-top: 72px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 48px;
 }
+
+/* ITEM */
+.diferencial-item {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* BARRA VISUAL */
+.diferencial-item .barra {
+  width: 4px;
+  min-height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #0f172a,
+    rgba(15,23,42,0.25)
+  );
+  border-radius: 2px;
+}
+
+/* TEXTO */
+.diferencial-item h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.diferencial-item p {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .diferenciais-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
 
 .largura-media {
   max-width: 90%;
@@ -276,10 +535,15 @@ line-height: 2em; text-align: justify; }
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
+  max-width: 1200px;
 }
 
 .contato-texto p {
   margin: 24px 0;
+}
+
+.contato-texto h2{
+  font-size: clamp(1.2em, 2.2em, 4em);
 }
 
 
@@ -370,88 +634,102 @@ line-height: 2em; text-align: justify; }
 }
 
 
-/*=====================
-SESSÃO SOBRE
+/* =====================
+   SOBRE — NOVO FORMATO
 ===================== */
 
-.linha-tempo {
-  position: relative;
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-
-/* LINHA CENTRAL */
-.linha-tempo::before {
-  content: "";
-  position: absolute;
-  left: 140px;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: white;
-}
-
-/* EVENTO */
-.evento {
-  display: grid;
-  grid-template-columns: 110px 60px 1fr;
-  align-items: flex-start;
-  gap: 0;
+.sobre {
   position: relative;
 }
 
-/* ANO */
-.ano {
-  text-align: right;
-  font-weight: 600;
-  color: white;
-  padding-right: 16px;
-  white-space: nowrap;
-}
-
-/* BOLINHA */
-.marcador {
-  width: 16px;
-  height: 16px;
-  background: white;
-  border-radius: 50%;
-  margin-top: 6px;
+/* CONTAINER */
+.sobre-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
   z-index: 2;
 }
 
+/* HEADER */
+.sobre-header h2 {
+  font-size: clamp(1.2em, 2.2em, 4em);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+/* ETAPAS */
+.sobre-etapas {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* ETAPA */
+.etapa {
+  position: relative;
+  padding: 48px 42px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* TAG */
+.etapa-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* TÍTULO */
+.etapa h3 {
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
 /* TEXTO */
-.descricao h3 {
-  margin-bottom: 8px;
+.etapa p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  opacity: 0.9;
 }
 
-.evento.destaque .descricao {
-  background: rgba(212,175,55,0.12);
-  padding: 24px;
-  border-radius: 16px;
+/* ANO */
+.etapa-ano {
+  margin-top: auto;
+  font-size: 0.8rem;
+  opacity: 0.6;
 }
 
-@media (max-width: 768px) {
-  .linha-tempo::before {
-    left: 18px;
-  }
+/* DESTAQUE FINAL */
+.etapa.destaque {
+  background: linear-gradient(
+    140deg,
+    rgba(255,255,255,0.16),
+    rgba(255,255,255,0.04)
+  );
+  border-color: rgba(255,255,255,0.4);
+}
 
-  .evento {
+/* MICRO INTERAÇÃO */
+.etapa:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.4);
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .sobre-etapas {
     grid-template-columns: 1fr;
-    padding-left: 40px;
-  }
-
-  .ano {
-    text-align: left;
-    margin-bottom: 4px;
-    padding-right: 0;
-  }
-
-  .marcador {
-    position: absolute;
-    left: 10px;
-    top: 6px;
+    gap: 28px;
   }
 }
 
@@ -525,9 +803,6 @@ SESSÃO SOBRE
 }
 
 
-/* -------------------------
-   CONTATO
-------------------------- */
 
 .forma-horizonte {
   position: absolute;
@@ -575,7 +850,7 @@ SESSÃO SOBRE
   .grade-diferenciais {
     grid-template-columns: 1fr;
   }
-  h1 { font-size: 2.2rem; }
+  h2 { font-size: 2.2rem; }
 }
 
 
@@ -600,7 +875,7 @@ SESSÃO SOBRE
 .rodape-bloco h4 {
   font-size: 0.95rem;
   margin-bottom: 16px;
-  color: #d4af37;
+  color: #5986c5;
 }
 
 .rodape-bloco p,
