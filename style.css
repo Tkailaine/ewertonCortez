@@ -179,7 +179,7 @@ h1,h2{
 h1 { font-size: 2rem; margin-bottom: 20px; }
 h2 { font-size: 1.4rem; margin-bottom: 10px; }
 p { font-size: 1.05rem; opacity: 0.9;
-line-height: 2em; text-align: justify; }
+line-height: 2em; text-align: justify;hyphens: auto; }
 
 .hero-signature {
   position: relative;
